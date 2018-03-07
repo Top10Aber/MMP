@@ -124,7 +124,7 @@ public class Controller extends Application {
 				view = viewController;
 				showQuiz(defaultNumOfAttempts);
 				
-			} catch (throws IOException e) {
+			} catch (IOException e) {
 				throw new IOException("Error with Quiz View");
 			}
 		}
@@ -139,7 +139,7 @@ public class Controller extends Application {
 		if (index < quizDesign.getGameSize())
 			view.showQuiz(quizDesign.getQuestion(index), quizDesign.getAllAnswers(index));
 		else
-			throws new IOException("Error with something?");
+			throw new IOException("Error with something?");
 	}
 	
 	public void stepQuiz(String pick) throws IOException{
