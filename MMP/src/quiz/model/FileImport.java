@@ -31,7 +31,7 @@ public class FileImport {
 	
 	
 	// describe
-	private static void redFileToQuiz(File f, QuizModel quiz) throws IOException {
+	private static void readFileToQuiz(File f, QuizModel quiz) throws IOException {
 		
 		if (f.exists()) {
 			FileInputStream file = new FileInputStream(f);
