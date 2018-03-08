@@ -69,7 +69,8 @@ public class LoadViewController
 				bResume.setVisible(true);
 			//Scored some, but not all/none
 			} else {
-				result.setText("You scored " + score + " out of " + max + " points. Revisit the incorrect answers or return to the menu.");
+				result.setText("You scored " + score + " out of " + max + " points. \n"  
+						+ "Revisit the incorrect answers or return to the menu.");
 				bResume.setVisible(true);
 			}
 	/*	} else {
