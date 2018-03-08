@@ -10,8 +10,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
-public class QuizViewController
-{
+public class QuizViewController {
 	private Controller mainApp;		// Reference to the main application
 	@FXML private Label question; // The question
 	@FXML private RadioButton rbA;  //Rename all this shit
@@ -37,19 +36,26 @@ public class QuizViewController
 	@FXML
 	private void initialize() { 
 		rB = new RadioButton[6];
-		rB[0] = rbA; rB[1] = rbB; rB[2] = rbC;	// House-keeping
-		rB[3] = rbD; rB[4] = rbE; rB[5] = rbF;
-		rbA.setToggleGroup(rbGroup); rbB.setToggleGroup(rbGroup);
-		rbC.setToggleGroup(rbGroup); rbD.setToggleGroup(rbGroup);
-		rbE.setToggleGroup(rbGroup); rbF.setToggleGroup(rbGroup);
+		rB[0] = rbA; 
+		rB[1] = rbB; 
+		rB[2] = rbC;	// House-keeping
+		rB[3] = rbD; 
+		rB[4] = rbE; 
+		rB[5] = rbF;
+		rbA.setToggleGroup(rbGroup); 
+		rbB.setToggleGroup(rbGroup);
+		rbC.setToggleGroup(rbGroup); 
+		rbD.setToggleGroup(rbGroup);
+		rbE.setToggleGroup(rbGroup); 
+		rbF.setToggleGroup(rbGroup);
 	}
 	//set up program in the main screen (easier to make using fxml)
 	public void setMainApp(Controller mainApp) {
 		this.mainApp = mainApp;	
 	}
 	
-	@FXML private void rbClicked()	{ bNext.setDisable(false);	}
-	@FXML private void bNext() throws IOException		{ getNextQuiz();			}
+	@FXML private void rbClicked() { bNext.setDisable(false);	}
+	@FXML private void bNext() throws IOException { getNextQuiz(); }
 
 	private void getNextQuiz() throws IOException {
 		String picked = ((Labeled) rbGroup.getSelectedToggle()).getText();
@@ -58,7 +64,7 @@ public class QuizViewController
 
 	//makes features visible
 	public void showQuiz(String question, String[] allAnswers){
-		this.question.setText(question + "?");
+		this.question.setText(question + "?"); //Make question mark conditional if possible
 		this.question.setVisible(true);
 		this.bNext.setDisable(true);
 		for (int i = 0; i < 6; i++){

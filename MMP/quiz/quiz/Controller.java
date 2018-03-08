@@ -12,8 +12,7 @@ import quiz.model.QuizModel;
 import quiz.view.LoadViewController;
 import quiz.view.QuizViewController;
 
-public class Controller extends Application
-{
+public class Controller extends Application {
 	
 	private Stage primaryStage;
 	private BorderPane mainLayout;

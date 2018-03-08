@@ -2,8 +2,7 @@ package quiz.model;
 
 import java.util.List;
 
-public class AQuiz
-{
+public class AQuiz {
 	private final static int MAX_ANSWER_OPTIONS = 6;
 	
 	private String questions;
