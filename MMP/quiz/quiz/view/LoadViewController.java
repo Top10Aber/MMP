@@ -73,6 +73,7 @@ public class LoadViewController
 						+ "Revisit the incorrect answers or return to the menu.");
 				bResume.setVisible(true);
 			}
+			
 	/*	} else {
 			
 			//disable closing 
