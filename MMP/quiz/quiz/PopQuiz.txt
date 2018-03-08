@@ -1,4 +1,4 @@
-How many corners are there in a traingle
+How many corners are there in a triangle
 3
 4
 55

@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 public class LoadViewController
 {
 	private Controller mainApp;		// call back to the main application to load it all in
-	@FXML private Label headline;	// load fxml things
+	@FXML private Label titleText;	// load fxml things
 	@FXML private Label result;
 	@FXML private Button bResume;
 	@FXML private Button bRestart;
@@ -19,7 +19,7 @@ public class LoadViewController
 	
 	//features of load menu
 	public LoadViewController() {
-		headline = new Label();
+		titleText = new Label();
 		result = new Label();
 	}
 
@@ -53,7 +53,7 @@ public class LoadViewController
 		bAbout.setVisible(false);
 		bMenu.setVisible(true);
 		bRestart.setVisible(true);
-		headline.setText("Result from Quiz:"); //text
+		titleText.setText("Result from Quiz:"); //text
 		
 		
 		//if(assessMode == false) {
