@@ -4,12 +4,10 @@ How many corners are there in a triangle
 55
 1
 
-
 What's the sum of 1 + 1
 2
 9
 10
-
 
 test
 answer
