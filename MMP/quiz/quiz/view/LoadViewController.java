@@ -27,6 +27,7 @@ public class LoadViewController
 	public void setMainApp(Controller mainApp) {
 		this.mainApp = mainApp;	
 	}
+	
 	@FXML private void quit() { System.exit(0); }
 	
 	// when user clicks button
