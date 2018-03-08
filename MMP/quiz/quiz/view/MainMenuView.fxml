@@ -24,6 +24,7 @@
           <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="Multiple Choice System" underline="true" wrapText="true">
@@ -95,6 +96,21 @@
                </GridPane.margin>
                <buttons>
                   <Button fx:id="bAbout" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#bAbout" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="About Menu" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="7">
+               <padding>
+                  <Insets right="160.5" />
+               </padding>
+               <buttons>
+                  <Button fx:id="bExit" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#bExit" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Exit" wrapText="true">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
