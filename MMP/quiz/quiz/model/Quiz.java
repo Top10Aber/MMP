@@ -2,7 +2,7 @@ package quiz.model;
 
 import java.util.List;
 
-public class AQuiz {
+public class Quiz {
 	private final static int MAX_ANSWER_OPTIONS = 6;
 	
 	private String questions;
@@ -10,7 +10,7 @@ public class AQuiz {
 	private String[] allAnswers;
 
 	
-	public AQuiz(List<String> list){
+	public Quiz(List<String> list){
 		questions = list.get(0); //question is top line of txt. 0 because obviously arrays/lists start at 0
 		correctAnswer = list.get(1); //correct answer has to be the top answer
 

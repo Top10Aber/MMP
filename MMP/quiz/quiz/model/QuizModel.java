@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class QuizModel {
-	public List<AQuiz> quiz;	// Quiz as loaded from file.
-	private List<AQuiz> game;	//clone of the quiz but the correctly answers fellas are removed to let the user revisit the other ones 
+	public List<Quiz> quiz;	// Quiz as loaded from file.
+	private List<Quiz> game;	//clone of the quiz but the correctly answers fellas are removed to let the user revisit the other ones 
 								//could be an adaption
 
 	//makes quiz from imported file
 	public QuizModel() throws Exception{
-		setQuiz(new LinkedList<AQuiz>());
+		setQuiz(new LinkedList<Quiz>());
 		FileImport.importQuiz(this);
 		startGame();
 	}
@@ -19,12 +19,12 @@ public class QuizModel {
 	//the clone of the quiz so can be redone
 	@SuppressWarnings("unchecked") //what dis? Research!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	public void startGame(){
-		game = (List<AQuiz>) ((LinkedList<AQuiz>) getQuiz()).clone();
+		game = (List<Quiz>) ((LinkedList<Quiz>) getQuiz()).clone();
 	}
 	
 	//loads quiz in... again?
 	public void addAQuiz(List<String> list){
-		getQuiz().add(new AQuiz(list));
+		getQuiz().add(new Quiz(list));
 	}
 	
 	// Getters for the controller:
@@ -68,11 +68,11 @@ public class QuizModel {
 			throw new IOException("Error with removing correct questions"); 
 	}
 
-	public List<AQuiz> getQuiz() {
+	public List<Quiz> getQuiz() {
 		return quiz;
 	}
 
-	public void setQuiz(List<AQuiz> quiz) {
+	public void setQuiz(List<Quiz> quiz) {
 		this.quiz = quiz;
 	}
 }

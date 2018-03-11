@@ -122,11 +122,11 @@ public class Controller extends Application {
 
 	//comment this
 	private void showQuiz(int index) throws IOException{
-		view.setProgress((double) (1 + defaultNumOfAttempts + quizDesign.getScore()) / (double) quizDesign.getTotalScore());
+		//view.setProgress((double) (1 + defaultNumOfAttempts + quizDesign.getScore()) / (double) quizDesign.getTotalScore());
 		if (index < quizDesign.getGameSize())
 			view.showQuiz(quizDesign.getQuestion(index), quizDesign.getAllAnswers(index));
 		else
-			throw new IOException("Error - fix me pls");
+			throw new IOException("Error with displaying questions.");
 	}
 
 	public void stepQuiz(String pick) throws IOException{
@@ -134,7 +134,7 @@ public class Controller extends Application {
 			quizDesign.remove(defaultNumOfAttempts);
 		else
 			defaultNumOfAttempts = defaultNumOfAttempts + 1;
-
+// progresses to next question
 		if (defaultNumOfAttempts < quizDesign.getGameSize()){
 			showQuiz((defaultNumOfAttempts));
 		} else {
