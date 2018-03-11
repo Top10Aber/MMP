@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
@@ -20,6 +21,7 @@ public class QuizViewController {
 	@FXML private RadioButton optionF;
 	@FXML private ToggleGroup optionGroup;
 	private RadioButton[] radioButtons;		// For iteration-purpose only (indexing)
+	@FXML private ProgressBar pB; //remove for "adaptions"
 	@FXML private Button buttonNext;
 
 	
@@ -27,6 +29,7 @@ public class QuizViewController {
 	public QuizViewController() {
 		question = new Label("");
 		optionGroup = new ToggleGroup();
+		pB = new ProgressBar(0);
 	}
 
 	//sets everything up after loading fxml in
@@ -77,5 +80,8 @@ public class QuizViewController {
 		}
 	}
 	
-	
+	//updates progress on progress bar
+	public void setProgress(double progress){
+		pB.setProgress(progress);
+	}
 }
