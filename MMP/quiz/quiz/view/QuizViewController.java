@@ -24,11 +24,11 @@ public class QuizViewController {
 	@FXML private ProgressBar pB; //remove for "adaptions"
 	@FXML private Button buttonNext;
 
-	
 	//load in features
 	public QuizViewController() {
 		question = new Label("");
 		optionGroup = new ToggleGroup();
+
 		pB = new ProgressBar(0);
 	}
 
@@ -80,7 +80,6 @@ public class QuizViewController {
 		}
 	}
 	
-	//updates progress on progress bar
 	public void setProgress(double progress){
 		pB.setProgress(progress);
 	}
