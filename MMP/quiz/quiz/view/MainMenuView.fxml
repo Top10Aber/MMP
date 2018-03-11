@@ -45,7 +45,7 @@
             </Label>
             <ButtonBar GridPane.rowIndex="2">
                <buttons>
-                  <Button fx:id="bResume" mnemonicParsing="false" onAction="#bResume" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Revisit unsolved" visible="false" wrapText="true">
+                  <Button fx:id="buttonResume" mnemonicParsing="false" onAction="#buttonResume" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Revisit unsolved" visible="false" wrapText="true">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Button>
@@ -56,7 +56,7 @@
             </ButtonBar>
             <ButtonBar GridPane.rowIndex="3">
                <buttons>
-                  <Button fx:id="bRestart" mnemonicParsing="false" onAction="#bRestart" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Restart quiz" visible="false" wrapText="true">
+                  <Button fx:id="buttonRestart" mnemonicParsing="false" onAction="#buttonRestart" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Restart quiz" visible="false" wrapText="true">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -71,7 +71,7 @@
                   <Insets right="160.5" />
                </GridPane.margin>
                <buttons>
-                  <Button fx:id="bMenu" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#bMenu" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Main Menu" visible="false" wrapText="true">
+                  <Button fx:id="buttonMenu" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonMenu" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Main Menu" visible="false" wrapText="true">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -83,7 +83,7 @@
                   <Insets right="160.5" />
                </GridPane.margin>
                <buttons>
-                  <Button fx:id="bLoad" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#bLoad" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Select Quiz" wrapText="true">
+                  <Button fx:id="buttonLoad" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonLoad" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Select Quiz" wrapText="true">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -95,12 +95,13 @@
                   <Insets right="160.5" />
                </GridPane.margin>
                <buttons>
-                  <Button fx:id="bAbout" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#bAbout" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="About Menu" wrapText="true">
+                  <Button fx:id="buttonAbout" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonAbout" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="About Menu" wrapText="true">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
+       
                      </opaqueInsets>
                   </Button>
                </buttons>
@@ -110,7 +111,7 @@
                   <Insets right="160.5" />
                </padding>
                <buttons>
-                  <Button fx:id="bExit" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#bExit" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Exit" wrapText="true">
+                  <Button fx:id="buttonExit" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonExit" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #3c5d5d; -fx-background-radius: 5; -fx-text-fill: #1a1a1a;" text="Exit" wrapText="true">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

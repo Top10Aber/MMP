@@ -41,27 +41,27 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="542.0">
                      <children>
-                        <RadioButton fx:id="rbA" layoutX="51.0" layoutY="4.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
+                        <RadioButton fx:id="optionA" layoutX="51.0" layoutY="4.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font></RadioButton>
-                        <RadioButton fx:id="rbB" layoutX="322.0" layoutY="4.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
+                        <RadioButton fx:id="optionB" layoutX="322.0" layoutY="4.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font></RadioButton>
-                        <RadioButton fx:id="rbC" layoutX="51.0" layoutY="80.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
+                        <RadioButton fx:id="optionC" layoutX="51.0" layoutY="80.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font></RadioButton>
-                        <RadioButton fx:id="rbD" layoutX="322.0" layoutY="80.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
+                        <RadioButton fx:id="optionD" layoutX="322.0" layoutY="80.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font></RadioButton>
-                        <RadioButton fx:id="rbE" layoutX="51.0" layoutY="156.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
+                        <RadioButton fx:id="optionE" layoutX="51.0" layoutY="156.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font></RadioButton>
-                        <RadioButton fx:id="rbF" layoutX="322.0" layoutY="166.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
+                        <RadioButton fx:id="optionF" layoutX="322.0" layoutY="166.0" mnemonicParsing="false" onAction="#rbClicked" text="RadioButton" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font></RadioButton>
@@ -71,7 +71,7 @@
             </Group>
             <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
               <buttons>
-                  <Button fx:id="bNext" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#bNext" prefWidth="100.0" text="Next" textAlignment="CENTER" />
+                  <Button fx:id="buttonNext" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#buttonNext" prefWidth="100.0" text="Next" textAlignment="CENTER" />
               </buttons>
                <padding>
                   <Insets left="170.0" right="180.0" />

@@ -13,69 +13,69 @@ import javafx.scene.control.ToggleGroup;
 public class QuizViewController {
 	private Controller mainApp;		// Reference to the main application
 	@FXML private Label question; // The question
-	@FXML private RadioButton rbA;  //Rename all this shit
-	@FXML private RadioButton rbB;
-	@FXML private RadioButton rbC;
-	@FXML private RadioButton rbD;
-	@FXML private RadioButton rbE;
-	@FXML private RadioButton rbF;
-	@FXML private ToggleGroup rbGroup;
-	private RadioButton[] rB;		// For iteration-purpose only (indexing)
+	@FXML private RadioButton optionA;  //Rename all this shit
+	@FXML private RadioButton optionB;
+	@FXML private RadioButton optionC;
+	@FXML private RadioButton optionD;
+	@FXML private RadioButton optionE;
+	@FXML private RadioButton optionF;
+	@FXML private ToggleGroup optionGroup;
+	private RadioButton[] radioButtons;		// For iteration-purpose only (indexing)
 	//@FXML private ProgressBar pB; //remove for "adaptions"
-	@FXML private Button bNext;
+	@FXML private Button buttonNext;
 
 	
 	//load in features
 	public QuizViewController() {
 		question = new Label("");
-		rbGroup = new ToggleGroup();
+		optionGroup = new ToggleGroup();
 		//pB = new ProgressBar(0);
 	}
 
 	//sets everything up after loading fxml in
 	@FXML
 	private void initialize() { 
-		rB = new RadioButton[6];
-		rB[0] = rbA; 
-		rB[1] = rbB; 
-		rB[2] = rbC;	// House-keeping
-		rB[3] = rbD; 
-		rB[4] = rbE; 
-		rB[5] = rbF;
-		rbA.setToggleGroup(rbGroup); 
-		rbB.setToggleGroup(rbGroup);
-		rbC.setToggleGroup(rbGroup); 
-		rbD.setToggleGroup(rbGroup);
-		rbE.setToggleGroup(rbGroup); 
-		rbF.setToggleGroup(rbGroup);
+		radioButtons = new RadioButton[6];
+		radioButtons[0] = optionA; 
+		radioButtons[1] = optionB; 
+		radioButtons[2] = optionC;	// House-keeping
+		radioButtons[3] = optionD; 
+		radioButtons[4] = optionE; 
+		radioButtons[5] = optionF;
+		optionA.setToggleGroup(optionGroup); 
+		optionB.setToggleGroup(optionGroup);
+		optionC.setToggleGroup(optionGroup); 
+		optionD.setToggleGroup(optionGroup);
+		optionE.setToggleGroup(optionGroup); 
+		optionF.setToggleGroup(optionGroup);
 	}
 	//set up program in the main screen (easier to make using fxml)
 	public void setMainApp(Controller mainApp) {
 		this.mainApp = mainApp;	
 	}
 	
-	@FXML private void rbClicked() { bNext.setDisable(false);	}
-	@FXML private void bNext() throws IOException { getNextQuiz(); }
+	@FXML private void rbClicked() { buttonNext.setDisable(false);	}
+	@FXML private void buttonNext() throws IOException { getNextQuiz(); }
 
 	private void getNextQuiz() throws IOException {
-		String picked = ((Labeled) rbGroup.getSelectedToggle()).getText();
-		mainApp.stepQuiz(picked);
+		String picked = ((Labeled) optionGroup.getSelectedToggle()).getText();
+		mainApp.loadNextQuestion(picked);
 	}
 
 	//makes features visible
 	public void showQuiz(String question, String[] allAnswers){
 		this.question.setText(question + "?"); //Make question mark conditional if possible
 		this.question.setVisible(true);
-		this.bNext.setDisable(true);
+		this.buttonNext.setDisable(true);
 		for (int i = 0; i < 6; i++){
 			if (i >= allAnswers.length) {
-				rB[i].setText("");
-				rB[i].setSelected(false);
-				rB[i].setVisible(false);
+				radioButtons[i].setText("");
+				radioButtons[i].setSelected(false);
+				radioButtons[i].setVisible(false);
 			} else {
-				rB[i].setText(allAnswers[i]);
-				rB[i].setSelected(false);
-				rB[i].setVisible(true);
+				radioButtons[i].setText(allAnswers[i]);
+				radioButtons[i].setSelected(false);
+				radioButtons[i].setVisible(true);
 			}
 		}
 	}

@@ -15,7 +15,7 @@ import quiz.view.QuizViewController;
 public class Controller extends Application {
 	
 	private Stage primaryStage;
-	private BorderPane mainLayout;
+	private BorderPane baseLayout;
 	private QuizModel quizDesign;
 	private QuizViewController view;
 	private LoadViewController load;
@@ -23,6 +23,7 @@ public class Controller extends Application {
 	private int numOfAttempts;
 
 	// Finish the launch-sequence
+	//error
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Multiple Choice System"); //Title of the program
@@ -30,17 +31,17 @@ public class Controller extends Application {
 		primaryStage.setResizable(false);  //Locks size 
 		//REFERENCE: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
 		
-		loadMainLayout();
+		loadBaseLayout();
 		showLoadScreen();
 	}
 
 	//things load into this
-	private void loadMainLayout() throws IOException {
+	private void loadBaseLayout() throws IOException {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Controller.class.getResource("view/BaseLayout.fxml"));
-			mainLayout = (BorderPane) loader.load();
-			Scene scene = new Scene(mainLayout);
+			baseLayout = (BorderPane) loader.load();
+			Scene scene = new Scene(baseLayout);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
@@ -50,12 +51,13 @@ public class Controller extends Application {
 	}
 
 	// Loads the load thing menu
+	//error
 	private void showLoadScreen() throws IOException {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Controller.class.getResource("view/MainMenuView.fxml"));
 			AnchorPane loadView = (AnchorPane) loader.load();
-			mainLayout.setCenter(loadView);
+			baseLayout.setCenter(loadView);
 			LoadViewController viewController = loader.getController();
 			viewController.setMainApp(this);
 			load = viewController;				
@@ -71,7 +73,7 @@ public class Controller extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Controller.class.getResource("view/About.fxml"));
 			AnchorPane loadView = (AnchorPane) loader.load();
-			mainLayout.setCenter(loadView);
+			baseLayout.setCenter(loadView);
 			LoadViewController viewController = loader.getController();
 			viewController.setMainApp(this);
 			load = viewController;				
@@ -108,7 +110,7 @@ public class Controller extends Application {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(Controller.class.getResource("view/QuizView.fxml"));
 				AnchorPane quizView = (AnchorPane) loader.load();
-				mainLayout.setCenter(quizView);
+				baseLayout.setCenter(quizView);
 				QuizViewController viewController = loader.getController();
 				viewController.setMainApp(this);	
 				view = viewController;				
@@ -129,7 +131,7 @@ public class Controller extends Application {
 			throw new IOException("Error with displaying questions.");
 	}
 
-	public void stepQuiz(String pick) throws IOException{
+	public void loadNextQuestion(String pick) throws IOException{
 		if (pick.equals(quizDesign.getCorrect(defaultNumOfAttempts)))
 			quizDesign.remove(defaultNumOfAttempts);
 		else
