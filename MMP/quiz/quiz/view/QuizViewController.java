@@ -80,7 +80,7 @@ public class QuizViewController {
 		}
 	}
 	
-	//updates progress on pB
+	//updates progress on progress bar
 	public void setProgress(double progress){
 		pB.setProgress(progress);
 	}
