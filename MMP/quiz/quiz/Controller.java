@@ -22,8 +22,6 @@ public class Controller extends Application {
 	private int defaultNumOfAttempts;
 	private int numOfAttempts;
 
-	// Finish the launch-sequence
-	//error
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Multiple Choice System"); //Title of the program
@@ -51,7 +49,6 @@ public class Controller extends Application {
 	}
 
 	// Loads the load thing menu
-	//error
 	private void showLoadScreen() throws IOException {
 		try {
 			FXMLLoader loader = new FXMLLoader();

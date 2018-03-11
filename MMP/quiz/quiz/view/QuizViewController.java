@@ -13,23 +13,23 @@ import javafx.scene.control.ToggleGroup;
 public class QuizViewController {
 	private Controller mainApp;		// Reference to the main application
 	@FXML private Label question; // The question
-	@FXML private RadioButton optionA;  //Rename all this shit
+	@FXML private RadioButton optionA;  // The options
 	@FXML private RadioButton optionB;
 	@FXML private RadioButton optionC;
 	@FXML private RadioButton optionD;
 	@FXML private RadioButton optionE;
 	@FXML private RadioButton optionF;
 	@FXML private ToggleGroup optionGroup;
-	private RadioButton[] radioButtons;		// For iteration-purpose only (indexing)
-	@FXML private ProgressBar pB; //remove for "adaptions"
+	private RadioButton[] radioButtons;
+	@FXML private ProgressBar progressBar; 
 	@FXML private Button buttonNext;
-
+// skip button needs to be added
+	
 	//load in features
 	public QuizViewController() {
 		question = new Label("");
 		optionGroup = new ToggleGroup();
-
-		pB = new ProgressBar(0);
+		progressBar = new ProgressBar(0);
 	}
 
 	//sets everything up after loading fxml in
@@ -38,7 +38,7 @@ public class QuizViewController {
 		radioButtons = new RadioButton[6];
 		radioButtons[0] = optionA; 
 		radioButtons[1] = optionB; 
-		radioButtons[2] = optionC;	// House-keeping
+		radioButtons[2] = optionC;	// Allocating radio buttons to the options
 		radioButtons[3] = optionD; 
 		radioButtons[4] = optionE; 
 		radioButtons[5] = optionF;
@@ -81,6 +81,6 @@ public class QuizViewController {
 	}
 	
 	public void setProgress(double progress){
-		pB.setProgress(progress);
+		progressBar.setProgress(progress);
 	}
 }
