@@ -30,6 +30,8 @@ public class Controller extends Application {
 		//REFERENCE: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
 		// Check if I need to reference in code
 		
+		System.out.println("javafx.version: " + System.getProperty("javafx.version"));
+		
 		loadBaseLayout();
 		showLoadScreen();
 	}
@@ -77,7 +79,7 @@ public class Controller extends Application {
 			load = viewController;				
 
 		} catch (IOException e) {
-			throw new IOException("Error with loading the About Menu");
+			throw new IOException("Error with loading About Menu");
 		}
 	}
 	

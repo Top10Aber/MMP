@@ -19,7 +19,6 @@ public class AQuiz {
 		else
 			allAnswers = new String[list.size()-1];
 		//Randomises order of answers to select. Makes it easy for maker but not obvious the answer is always the top one 
-		// this can be an adaption thing
 		int correctIndex = (int) (Math.random() * allAnswers.length);
 		int listIndex = 2;
 		for (int i=0; i < allAnswers.length; i++){
