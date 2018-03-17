@@ -24,7 +24,7 @@ public class QuizViewController {
 	@FXML private ProgressBar progressBar; 
 	@FXML private Button buttonNext;
 	@FXML private Button buttonSkip;
-// skip button needs to be added
+	@FXML private Button buttonBack;
 	
 	//load in features
 	public QuizViewController() {
@@ -55,25 +55,41 @@ public class QuizViewController {
 		this.mainApp = mainApp;	
 	}
 	
-	@FXML private void rbClicked() { buttonNext.setDisable(false);	}
+	@FXML private void rbClicked() { buttonNext.setDisable(false); }
 	@FXML private void buttonNext() throws IOException { getNextQuestion(); }
 	@FXML private void buttonSkip() throws IOException { skipQuestion(); }
+	@FXML private void buttonBack() throws IOException { getPrevQuestion(); }
 
 	private void getNextQuestion() throws IOException {
 		String picked = ((Labeled) optionGroup.getSelectedToggle()).getText();
 		mainApp.loadNextQuestion(picked);
+		System.out.println(Controller.defaultNumOfAttempts);
 	}
 	
 	private void skipQuestion() throws IOException {
 		mainApp.skipQuestion();
+		System.out.println(Controller.defaultNumOfAttempts);
+
 	}
 	
+	private void getPrevQuestion() throws IOException {
+		mainApp.prevQuestion();
+		System.out.println(Controller.defaultNumOfAttempts);
+
+	}
 
 	//makes features visible
 	public void showQuiz(String question, String[] allAnswers){
 		this.question.setText(question + "?"); //Make question mark conditional if possible
 		this.question.setVisible(true);
 		this.buttonNext.setDisable(true);
+		
+		
+		if(Controller.defaultNumOfAttempts <= 0){
+			buttonBack.setDisable(true);
+		} else { buttonBack.setDisable(false);}
+		
+		
 		this.buttonSkip.setDisable(false);
 		for (int i = 0; i < 6; i++){
 			if (i >= allAnswers.length) {

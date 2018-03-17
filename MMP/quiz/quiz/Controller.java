@@ -19,7 +19,7 @@ public class Controller extends Application {
 	private QuizModel quizDesign;
 	private QuizViewController view;
 	private LoadViewController load;
-	static int defaultNumOfAttempts;
+	public static int defaultNumOfAttempts;
 	static int numOfAttempts;
 
 	public void start(Stage primaryStage) throws Exception {
@@ -152,9 +152,17 @@ public class Controller extends Application {
 		} else {
 			showResult();
 		}
-
-		
 	}
+	
+	public void prevQuestion() throws IOException {
+		defaultNumOfAttempts = defaultNumOfAttempts - 1;
+		
+		if (defaultNumOfAttempts < quizDesign.getGameSize()){
+			showQuiz((defaultNumOfAttempts));
+		} else {
+			showResult();
+		}		
+		}
 
 	//Show results and attempts
 	private void showResult() throws IOException{
