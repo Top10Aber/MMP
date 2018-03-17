@@ -63,18 +63,18 @@ public class QuizViewController {
 	private void getNextQuestion() throws IOException {
 		String picked = ((Labeled) optionGroup.getSelectedToggle()).getText();
 		mainApp.loadNextQuestion(picked);
-		System.out.println(Controller.defaultNumOfAttempts);
+		System.out.println(Controller.questionNum);
 	}
 	
 	private void skipQuestion() throws IOException {
 		mainApp.skipQuestion();
-		System.out.println(Controller.defaultNumOfAttempts);
+		System.out.println(Controller.questionNum);
 
 	}
 	
 	private void getPrevQuestion() throws IOException {
 		mainApp.prevQuestion();
-		System.out.println(Controller.defaultNumOfAttempts);
+		System.out.println(Controller.questionNum);
 
 	}
 
@@ -84,8 +84,15 @@ public class QuizViewController {
 		this.question.setVisible(true);
 		this.buttonNext.setDisable(true);
 		
+		//Once I find a fix, remove the below line
+		this.buttonBack.setVisible(false);
 		
-		if(Controller.defaultNumOfAttempts <= 0){
+		//defaultNOA for not going back on correct ones
+		// QUESTION NUM WORKS BUT IT REMOVES THE QUESTION!
+		
+		//Ok so it currently works but doesn't remove the question which is annoying...
+		
+		if(Controller.questionNum < 1){
 			buttonBack.setDisable(true);
 		} else { buttonBack.setDisable(false);}
 		

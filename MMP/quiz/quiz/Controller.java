@@ -21,6 +21,7 @@ public class Controller extends Application {
 	private LoadViewController load;
 	public static int defaultNumOfAttempts;
 	static int numOfAttempts;
+	public static int questionNum;
 
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
@@ -104,6 +105,7 @@ public class Controller extends Application {
 	//Loads the quiz
 	private void showQuizView() throws IOException {
 		defaultNumOfAttempts = 0;
+		questionNum = 0;
 		numOfAttempts = numOfAttempts + 1;
 		if (quizDesign.getGameSize() > 0) {
 			try {
@@ -132,10 +134,19 @@ public class Controller extends Application {
 	}
 
 	public void loadNextQuestion(String pick) throws IOException{
-		if (pick.equals(quizDesign.getCorrect(defaultNumOfAttempts)))
+		
+		//Find a way to go back but also remove correct ones
+		
+		if (pick.equals(quizDesign.getCorrect(defaultNumOfAttempts))){
 			quizDesign.remove(defaultNumOfAttempts);
-		else
+			questionNum ++;
+		} else { 
+		
+		
+		
+		
 			defaultNumOfAttempts = defaultNumOfAttempts + 1;
+			questionNum ++;}
 
 		if (defaultNumOfAttempts < quizDesign.getGameSize()){
 			showQuiz((defaultNumOfAttempts));
@@ -147,6 +158,7 @@ public class Controller extends Application {
 	public void skipQuestion() throws IOException {
 
 		defaultNumOfAttempts = defaultNumOfAttempts + 1;
+		questionNum ++;
 		if (defaultNumOfAttempts < quizDesign.getGameSize()){
 			showQuiz((defaultNumOfAttempts));
 		} else {
@@ -155,7 +167,9 @@ public class Controller extends Application {
 	}
 	
 	public void prevQuestion() throws IOException {
+		questionNum --;
 		defaultNumOfAttempts = defaultNumOfAttempts - 1;
+		
 		
 		if (defaultNumOfAttempts < quizDesign.getGameSize()){
 			showQuiz((defaultNumOfAttempts));
