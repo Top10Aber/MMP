@@ -19,8 +19,8 @@ public class Controller extends Application {
 	private QuizModel quizDesign;
 	private QuizViewController view;
 	private LoadViewController load;
-	private int defaultNumOfAttempts;
-	private int numOfAttempts;
+	static int defaultNumOfAttempts;
+	static int numOfAttempts;
 
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
