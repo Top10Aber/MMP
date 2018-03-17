@@ -138,15 +138,14 @@ public class Controller extends Application {
 		//Find a way to go back but also remove correct ones
 		
 		if (pick.equals(quizDesign.getCorrect(defaultNumOfAttempts))){
-			quizDesign.remove(defaultNumOfAttempts);
+			quizDesign.remove(defaultNumOfAttempts); //This is the problem line
 			questionNum ++;
 		} else { 
 		
-		
-		
-		
 			defaultNumOfAttempts = defaultNumOfAttempts + 1;
-			questionNum ++;}
+			questionNum ++;
+			
+		}
 
 		if (defaultNumOfAttempts < quizDesign.getGameSize()){
 			showQuiz((defaultNumOfAttempts));
@@ -166,6 +165,7 @@ public class Controller extends Application {
 		}
 	}
 	
+	// Currently does nothing until I either fix removal or remove this feature :( 
 	public void prevQuestion() throws IOException {
 		questionNum --;
 		defaultNumOfAttempts = defaultNumOfAttempts - 1;

@@ -16,5 +16,11 @@ public class JUnitTests {
 		int output = Controller.defaultNumOfAttempts;
 		assertEquals(0, output);
 	}
+	
+	@Test
+	public void testThree() {
+		int output = Controller.questionNum;
+		assertEquals(0, output);
+	}
 
 }

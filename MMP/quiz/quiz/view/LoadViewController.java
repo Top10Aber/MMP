@@ -7,9 +7,9 @@ import javafx.scene.control.Label;
 
 public class LoadViewController
 {
-	private Controller mainApp;		// call back to the main application to load it all in
-	@FXML private Label titleText;	// load fxml things
-	@FXML private Label result;
+	private Controller   mainApp;		// call back to the main application to load it all in
+	@FXML private Label  titleText;	// load fxml things
+	@FXML private Label  result;
 	@FXML private Button buttonResume;
 	@FXML private Button buttonRestart;
 	@FXML private Button buttonLoad;
@@ -31,12 +31,12 @@ public class LoadViewController
 	@FXML private void quit() { System.exit(0); }
 	
 	// when user clicks button
-	@FXML private void buttonResume() throws Exception	{ mainApp.resumeQuiz(); }
-	@FXML private void buttonRestart() throws Exception	{ mainApp.restartQuiz(); }
-	@FXML private void buttonLoad() throws Exception		{ mainApp.loadQuiz(); }
-	@FXML private void buttonMenu() throws Exception     { mainApp.mainMenu(); }
-	@FXML private void buttonAbout() throws Exception	{ mainApp.aboutScreen(); } 
-	@FXML private void buttonExit() throws Exception	    { mainApp.Exit(); } 
+	@FXML private void buttonResume() throws Exception  	{ mainApp.resumeQuiz();  }
+	@FXML private void buttonRestart() throws Exception	    { mainApp.restartQuiz(); }
+	@FXML private void buttonLoad() throws Exception		{ mainApp.loadQuiz();    }
+	@FXML private void buttonMenu() throws Exception        { mainApp.mainMenu();    }
+	@FXML private void buttonAbout() throws Exception	    { mainApp.aboutScreen(); } 
+	@FXML private void buttonExit() throws Exception	    { mainApp.Exit();        } 
 	
 	
 	/*

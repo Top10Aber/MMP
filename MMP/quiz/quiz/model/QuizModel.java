@@ -61,6 +61,7 @@ public class QuizModel {
 	}
 	
 	//removes correct ones from clone so can be redone
+	// This will be part of back button
 	public void remove(int index) throws IOException{
 		if (index < game.size())
 			game.remove(index);
