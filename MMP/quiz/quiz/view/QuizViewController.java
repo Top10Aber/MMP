@@ -23,6 +23,7 @@ public class QuizViewController {
 	private RadioButton[] radioButtons;
 	@FXML private ProgressBar progressBar; 
 	@FXML private Button buttonNext;
+	@FXML private Button buttonSkip;
 // skip button needs to be added
 	
 	//load in features
@@ -55,18 +56,25 @@ public class QuizViewController {
 	}
 	
 	@FXML private void rbClicked() { buttonNext.setDisable(false);	}
-	@FXML private void buttonNext() throws IOException { getNextQuiz(); }
+	@FXML private void buttonNext() throws IOException { getNextQuestion(); }
+	@FXML private void buttonSkip() throws IOException { skipQuestion(); }
 
-	private void getNextQuiz() throws IOException {
+	private void getNextQuestion() throws IOException {
 		String picked = ((Labeled) optionGroup.getSelectedToggle()).getText();
 		mainApp.loadNextQuestion(picked);
 	}
+	
+	private void skipQuestion() throws IOException {
+		mainApp.skipQuestion();
+	}
+	
 
 	//makes features visible
 	public void showQuiz(String question, String[] allAnswers){
 		this.question.setText(question + "?"); //Make question mark conditional if possible
 		this.question.setVisible(true);
 		this.buttonNext.setDisable(true);
+		this.buttonSkip.setDisable(false);
 		for (int i = 0; i < 6; i++){
 			if (i >= allAnswers.length) {
 				radioButtons[i].setText("");

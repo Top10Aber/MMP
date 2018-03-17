@@ -117,7 +117,7 @@ public class Controller extends Application {
 				showQuiz(defaultNumOfAttempts);
 
 			} catch (IOException e) {
-				throw new IOException("Error - fix me pls");
+				throw new IOException("Error with loading Quiz View");
 			}
 		}
 	}
@@ -128,7 +128,7 @@ public class Controller extends Application {
 		if (index < quizDesign.getGameSize())
 			view.showQuiz(quizDesign.getQuestion(index), quizDesign.getAllAnswers(index));
 		else
-			throw new IOException("Error - fix me pls");
+			throw new IOException("Error showing quiz");
 	}
 
 	public void loadNextQuestion(String pick) throws IOException{
@@ -142,6 +142,18 @@ public class Controller extends Application {
 		} else {
 			showResult();
 		}
+	}
+	
+	public void skipQuestion() throws IOException {
+
+		defaultNumOfAttempts = defaultNumOfAttempts + 1;
+		if (defaultNumOfAttempts < quizDesign.getGameSize()){
+			showQuiz((defaultNumOfAttempts));
+		} else {
+			showResult();
+		}
+
+		
 	}
 
 	//Show results and attempts
