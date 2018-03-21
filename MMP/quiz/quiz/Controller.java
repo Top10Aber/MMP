@@ -25,7 +25,7 @@ public class Controller extends Application {
 
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Multiple Choice System"); //Title of the program
+		this.primaryStage.setTitle("Educational Quiz System"); //Title of the program
 		primaryStage.getIcons().add(new Image("icon_1.png")); // Change to something relevant
 		primaryStage.setResizable(false);  //Locks size 
 		//REFERENCE: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe

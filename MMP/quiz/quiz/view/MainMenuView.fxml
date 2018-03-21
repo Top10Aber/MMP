@@ -27,7 +27,7 @@
             <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="Multiple Choice System" underline="true" wrapText="true">
+            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="Educational Quiz System" underline="true" wrapText="true">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
