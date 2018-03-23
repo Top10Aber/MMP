@@ -169,13 +169,7 @@ public class Controller extends Application {
 	public void prevQuestion() throws IOException {
 		questionNum --;
 		defaultNumOfAttempts = defaultNumOfAttempts - 1;
-		
-		
-		if (defaultNumOfAttempts < quizDesign.getGameSize()){
-			showQuiz((defaultNumOfAttempts));
-		} else {
-			showResult();
-		}		
+			
 		}
 
 	//Show results and attempts
