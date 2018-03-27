@@ -53,7 +53,7 @@ public class Controller extends Application {
 	}
 
 	// Loads the load thing menu
-	private void showLoadScreen() throws IOException {
+	public void showLoadScreen() throws IOException {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Controller.class.getResource("view/MainMenuView.fxml"));
@@ -84,10 +84,10 @@ public class Controller extends Application {
 		}
 	}
 	
-	//Loads the revisit wrong question function
+/*	//Loads the revisit wrong question function
 	public void resumeQuiz() throws IOException{
 		showQuizView();
-	}
+	}*/
 
 	//Restart quiz button
 	public void restartQuiz() throws IOException {
@@ -103,7 +103,7 @@ public class Controller extends Application {
 	}
 
 	//Loads the quiz
-	private void showQuizView() throws IOException {
+	public void showQuizView() throws IOException {
 		defaultNumOfAttempts = 0;
 		questionNum = 0;
 		numOfAttempts = numOfAttempts + 1;
@@ -165,26 +165,31 @@ public class Controller extends Application {
 		}
 	}
 	
+	
+	
 	// Currently does nothing until I either fix removal or remove this feature :( 
-	public void prevQuestion() throws IOException {
+/*	public void prevQuestion() throws IOException {
 		questionNum --;
 		defaultNumOfAttempts = defaultNumOfAttempts - 1;
 			
-		}
+		}*/
 
+	
+	
+	
 	//Show results and attempts
 	private void showResult() throws IOException{
 		showLoadScreen(); 
 		load.showResult(quizDesign.getScore(), quizDesign.getTotalScore(), numOfAttempts);
 	}
 	
-	public void mainMenu() throws IOException {
+	/*public void mainMenu() throws IOException {
 		showLoadScreen();
-	 }
+	 }*/
 	
-	public void aboutScreen() throws IOException {
+	/*public void aboutScreen() throws IOException {
 		showAboutScreen();
-	 }
+	 }*/
 	
 	public void Exit() throws IOException {
 		System.exit(0);

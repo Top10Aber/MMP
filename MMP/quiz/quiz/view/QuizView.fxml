@@ -69,14 +69,14 @@
                   </AnchorPane>
                </children>
             </Group>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
+            <ButtonBar prefHeight="40.0" prefWidth="550.0" GridPane.rowIndex="2">
               <buttons>
                   <Button fx:id="buttonNext" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#buttonNext" prefWidth="100.0" text="Next" textAlignment="CENTER" />
                   <Button fx:id="buttonSkip" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#buttonSkip" prefWidth="100.0" text="Skip" textAlignment="CENTER" />
-                  <Button fx:id="buttonBack" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#buttonBack" prefWidth="100.0" text="Back" textAlignment="CENTER" />
+<!--                  <Button fx:id="buttonBack" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#buttonBack" prefWidth="100.0" text="Back" textAlignment="CENTER" /> -->
               </buttons>
                <padding>
-                  <Insets left="170.0" right="180.0" />
+                  <Insets right="75.0" />
                </padding>
                <GridPane.margin>
                   <Insets right="40.0" />
