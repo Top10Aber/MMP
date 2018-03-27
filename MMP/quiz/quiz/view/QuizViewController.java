@@ -116,7 +116,7 @@ public class QuizViewController {
 		
 		
 		
-		
+	
 		this.buttonSkip.setDisable(false);
 		for (int i = 0; i < 6; i++){
 			if (i >= allAnswers.length) {
