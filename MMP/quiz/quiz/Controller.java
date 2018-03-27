@@ -167,7 +167,6 @@ public class Controller extends Application {
 /*	public void prevQuestion() throws IOException {
 		questionNum --;
 		defaultNumOfAttempts = defaultNumOfAttempts - 1;
-			
 		}*/
 
 	
