@@ -83,11 +83,6 @@ public class Controller extends Application {
 			throw new IOException("Error with loading About Menu");
 		}
 	}
-	
-/*	//Loads the revisit wrong question function
-	public void resumeQuiz() throws IOException{
-		showQuizView();
-	}*/
 
 	//Restart quiz button
 	public void restartQuiz() throws IOException {
@@ -167,6 +162,7 @@ public class Controller extends Application {
 	
 	
 	
+	
 	// Currently does nothing until I either fix removal or remove this feature :( 
 /*	public void prevQuestion() throws IOException {
 		questionNum --;
@@ -182,14 +178,6 @@ public class Controller extends Application {
 		showLoadScreen(); 
 		load.showResult(quizDesign.getScore(), quizDesign.getTotalScore(), numOfAttempts);
 	}
-	
-	/*public void mainMenu() throws IOException {
-		showLoadScreen();
-	 }*/
-	
-	/*public void aboutScreen() throws IOException {
-		showAboutScreen();
-	 }*/
 	
 	public void Exit() throws IOException {
 		System.exit(0);
