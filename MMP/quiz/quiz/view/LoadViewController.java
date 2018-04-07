@@ -45,8 +45,8 @@ public class LoadViewController
 	private void assessMode() {
 		System.out.println("test");
 	}
-	
 	*/
+	
 	
 	//loads results and attempts
 	public void showResult(int score, int max, int attempt){
@@ -57,9 +57,9 @@ public class LoadViewController
 		titleText.setText("Result from Quiz:"); //text
 		
 		
-		//if(assessMode == false) {
+		/*if(assessMode == false) {*/
 			//All correct:
-			if (score == max) { 
+		if (score == max) { 
 				result.setText("Congratulations, you scored the full " + score + " points!\n"
 						+ "(It took " + attempt + " attempt" + (attempt > 1 ? "s)" :")")); //REFERENCE THIS !!!!!!!!!!!!!!!!!
 				buttonResume.setVisible(false);//full marks dont get to revisit obviously
@@ -77,8 +77,6 @@ public class LoadViewController
 	/*	} else {
 			
 			//disable closing 
-			
-			
 			
 			result.setText("You scored " + score + " out of " + max + " points. \n"
 					+ "Please wait for the assessor to collect your score.");
