@@ -43,7 +43,10 @@ public class QuizViewController {
 													 optionF.setFont(new Font(size));
 													 this.bigger.setDisable(true);
 													 this.smaller.setDisable(false);
+													 //STILL HAS THE RESIZE FIRST ONE WRONG BUG
+													 //FIX WITH A DECOY MAYBE?
 	}
+
 	@FXML private void buttonSmall() throws Exception {size = 14;	
 	 optionA.setFont(new Font(size));
 	 optionB.setFont(new Font(size));

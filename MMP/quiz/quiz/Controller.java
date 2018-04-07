@@ -116,6 +116,7 @@ public class Controller extends Application {
 			}
 		}
 	}
+	
 
 	//comment this
 	private void showQuiz(int index) throws IOException{
