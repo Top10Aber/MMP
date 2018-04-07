@@ -4,10 +4,12 @@ import quiz.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 
 public class LoadViewController
 {
 	private Controller   mainApp;		// call back to the main application to load it all in
+	@FXML private Label  headline;
 	@FXML private Label  titleText;	// load fxml things
 	@FXML private Label  result;
 	@FXML private Button buttonResume;
@@ -22,14 +24,15 @@ public class LoadViewController
 		titleText = new Label();
 		result = new Label();
 	}
-
+	
 	// call back to the main application to load it all in
 	public void setMainApp(Controller mainApp) {
 		this.mainApp = mainApp;	
 	}
 	
-	@FXML private void quit() { System.exit(0); }
 	
+	@FXML private void quit() { System.exit(0); }
+
 	// when user clicks button
 	@FXML private void buttonResume() throws Exception  	{ mainApp.showQuizView();      }
 	@FXML private void buttonRestart() throws Exception	    { mainApp.restartQuiz();       }
@@ -37,6 +40,7 @@ public class LoadViewController
 	@FXML private void buttonMenu() throws Exception        { mainApp.showLoadScreen();    }
 	@FXML private void buttonAbout() throws Exception	    { mainApp.showAboutScreen();   } 
 	@FXML private void buttonExit() throws Exception	    { quit();                      } 
+	
 	
 	
 	/*

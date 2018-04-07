@@ -9,6 +9,7 @@ import javafx.scene.control.Labeled;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Font;
 
 public class QuizViewController {
 	private Controller mainApp;		// Reference to the main application
@@ -25,12 +26,34 @@ public class QuizViewController {
 	@FXML private Button buttonNext;
 	@FXML private Button buttonSkip;
 	
+	@FXML private Button bigger;
+	@FXML private Button smaller;
 	
 	
 //	@FXML private Button buttonBack;
 	
+	int size = 0;
 	
-	
+	@FXML private void buttonBig() throws Exception {size = 25;													 
+													 optionA.setFont(new Font(size));
+													 optionB.setFont(new Font(size));
+													 optionC.setFont(new Font(size));
+													 optionD.setFont(new Font(size));
+													 optionE.setFont(new Font(size));
+													 optionF.setFont(new Font(size));
+													 this.bigger.setDisable(true);
+													 this.smaller.setDisable(false);
+	}
+	@FXML private void buttonSmall() throws Exception {size = 14;	
+	 optionA.setFont(new Font(size));
+	 optionB.setFont(new Font(size));
+	 optionC.setFont(new Font(size));
+	 optionD.setFont(new Font(size));
+	 optionE.setFont(new Font(size));
+	 optionF.setFont(new Font(size));
+	 this.bigger.setDisable(false);
+	 this.smaller.setDisable(true);
+}
 	
 	//load in features
 	public QuizViewController() {
