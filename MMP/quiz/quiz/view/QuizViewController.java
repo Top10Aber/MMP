@@ -20,21 +20,24 @@ public class QuizViewController {
 	@FXML private RadioButton optionD;
 	@FXML private RadioButton optionE;
 	@FXML private RadioButton optionF;
+	@FXML private RadioButton optionG;
 	@FXML private ToggleGroup optionGroup;
 	private RadioButton[] radioButtons;
 	@FXML private ProgressBar progressBar; 
 	@FXML private Button buttonNext;
 	@FXML private Button buttonSkip;
-	
 	@FXML private Button bigger;
-	@FXML private Button smaller;
+	@FXML private Button reset;
 	
 	
 //	@FXML private Button buttonBack;
 	
 	int size = 0;
+	int qSize = 18;
 	
-	@FXML private void buttonBig() throws Exception {size = 25;													 
+	@FXML private void buttonBig() throws Exception {size = 25;			
+													 question.setFont(new Font(size));
+													 optionG.setFont(new Font(size));
 													 optionA.setFont(new Font(size));
 													 optionB.setFont(new Font(size));
 													 optionC.setFont(new Font(size));
@@ -42,12 +45,13 @@ public class QuizViewController {
 													 optionE.setFont(new Font(size));
 													 optionF.setFont(new Font(size));
 													 this.bigger.setDisable(true);
-													 this.smaller.setDisable(false);
+													 this.reset.setDisable(false);
 													 //STILL HAS THE RESIZE FIRST ONE WRONG BUG
 													 //FIX WITH A DECOY MAYBE?
 	}
 
-	@FXML private void buttonSmall() throws Exception {size = 14;	
+	@FXML private void buttonReset() throws Exception {size = 14; 	
+	 question.setFont(new Font(qSize));
 	 optionA.setFont(new Font(size));
 	 optionB.setFont(new Font(size));
 	 optionC.setFont(new Font(size));
@@ -55,7 +59,7 @@ public class QuizViewController {
 	 optionE.setFont(new Font(size));
 	 optionF.setFont(new Font(size));
 	 this.bigger.setDisable(false);
-	 this.smaller.setDisable(true);
+	 this.reset.setDisable(true);
 }
 	
 	//load in features
@@ -68,19 +72,21 @@ public class QuizViewController {
 	//sets everything up after loading fxml in
 	@FXML
 	private void initialize() { 
-		radioButtons = new RadioButton[6];
+		radioButtons = new RadioButton[7];
 		radioButtons[0] = optionA; 
 		radioButtons[1] = optionB; 
 		radioButtons[2] = optionC;	// Allocating radio buttons to the options
 		radioButtons[3] = optionD; 
 		radioButtons[4] = optionE; 
 		radioButtons[5] = optionF;
+		radioButtons[6] = optionG;
 		optionA.setToggleGroup(optionGroup); 
 		optionB.setToggleGroup(optionGroup);
 		optionC.setToggleGroup(optionGroup); 
 		optionD.setToggleGroup(optionGroup);
 		optionE.setToggleGroup(optionGroup); 
 		optionF.setToggleGroup(optionGroup);
+		optionG.setToggleGroup(optionGroup);
 	}
 	//set up program in the main screen (easier to make using fxml)
 	public void setMainApp(Controller mainApp) {
@@ -141,14 +147,14 @@ public class QuizViewController {
 */		
 		
 		
-		
-	
 		this.buttonSkip.setDisable(false);
 		for (int i = 0; i < 6; i++){
 			if (i >= allAnswers.length) {
 				radioButtons[i].setText("");
 				radioButtons[i].setSelected(false);
 				radioButtons[i].setVisible(false);
+				radioButtons[6].setVisible(false);
+				radioButtons[6].setSelected(false);
 			} else {
 				radioButtons[i].setText(allAnswers[i]);
 				radioButtons[i].setSelected(false);

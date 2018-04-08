@@ -40,7 +40,7 @@
                   <Insets left="69.0" />
                </GridPane.margin>
                <font>
-                  <Font size="17.0" />
+                  <Font size="25.0" />
                </font>
             </Label>
             <ButtonBar GridPane.rowIndex="2">
