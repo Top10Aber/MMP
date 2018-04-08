@@ -1,8 +1,10 @@
 package quiz.view;
 
 import quiz.Controller;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
 public class LoadViewController
@@ -17,6 +19,7 @@ public class LoadViewController
 	@FXML private Button buttonMenu;
 	@FXML private Button buttonAbout;
 	@FXML private Button buttonExit;
+	@FXML private CheckBox assessment;
 	
 	//features of load menu
 	public LoadViewController() {
@@ -41,14 +44,26 @@ public class LoadViewController
 	@FXML private void buttonExit() throws Exception	    { quit();                      } 
 	
 	
+	boolean assessMode = false;
 	
-	/*
-	private boolean assessMode = false;
+	public void checkEvent(ActionEvent event) {
+		if(assessment.isSelected()) {
+			assessMode=true;
+			System.out.println("assess on");
+		} else {
+		assessMode = false;
+		System.out.println("assess off");
+		}
+	}
+	
 	
 	private void assessMode() {
+		
+		//lock it and shit
+		
 		System.out.println("test");
 	}
-	*/
+	
 	
 	
 	//loads results and attempts
@@ -58,9 +73,10 @@ public class LoadViewController
 		buttonMenu.setVisible(true);
 		buttonRestart.setVisible(true);
 		titleText.setText("Result from Quiz:"); //text
+		assessment.setVisible(false);
 		
 		
-		/*if(assessMode == false) {*/
+		if(assessMode == false) {
 			//All correct:
 		if (score == max) { 
 				result.setText("Congratulations, you scored the full " + score + " points!\n"
@@ -77,9 +93,11 @@ public class LoadViewController
 				buttonResume.setVisible(true);
 			}
 			
-	/*	} else {
+		} else {
 			
 			//disable closing 
+			
+			assessment.setVisible(false);
 			
 			result.setText("You scored " + score + " out of " + max + " points. \n"
 					+ "Please wait for the assessor to collect your score.");
@@ -88,8 +106,7 @@ public class LoadViewController
 			buttonExit.setVisible(false);
 			
 			assessMode();
-		
-		}*/
 	
 		}
+	}	
 }
