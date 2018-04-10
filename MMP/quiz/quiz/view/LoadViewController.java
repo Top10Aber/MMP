@@ -1,6 +1,17 @@
 package quiz.view;
 
 import quiz.Controller;
+
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.Timer;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -50,16 +61,25 @@ public class LoadViewController
 		System.out.println("assessment: " + assessMode);
 		}
 	
-	private void assessMode() {
-		
-		
+	private void assessMode() throws IOException {
 		System.out.println("Lock it and then activate menu button");
-	
-	
+		buttonMenu.setVisible(true);
+				
+		/*mainApp.primaryStage.setOnCloseRequest(evt -> {
+    		evt.consume();
+    		});
+		*/
+		Test.assessMode();	
+		
+		//keep mouse in the pop up screen, maybe robots?
+		
 	}
 	
+	
+	
+	
 	//loads results and attempts
-	public void showResult(int score, int max, int attempt){
+	public void showResult(int score, int max, int attempt) throws IOException{
 		buttonLoad.setVisible(false);
 		buttonAbout.setVisible(false);
 		buttonMenu.setVisible(true);

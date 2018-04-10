@@ -14,7 +14,7 @@ import quiz.view.QuizViewController;
 
 public class Controller extends Application {
 	
-	private Stage primaryStage;
+	public Stage primaryStage;
 	private BorderPane baseLayout;
 	private QuizModel quizDesign;
 	private QuizViewController view;
