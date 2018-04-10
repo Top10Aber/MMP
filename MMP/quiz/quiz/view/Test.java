@@ -31,6 +31,7 @@ public class Test {
 	                    @Override
 	                    public void actionPerformed(ActionEvent e) {
 	                        frame.dispose();
+	                       // buttonMenu.setVisible(true);
 	                    }
 	                });
 	                timer.start();

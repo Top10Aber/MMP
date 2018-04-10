@@ -2,6 +2,7 @@ package quiz.view;
 
 import quiz.Controller;
 
+import java.awt.Robot;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
@@ -61,20 +62,76 @@ public class LoadViewController
 		System.out.println("assessment: " + assessMode);
 		}
 	
-	private void assessMode() throws IOException {
+	/*private void assessMode() throws IOException {
 		System.out.println("Lock it and then activate menu button");
-		buttonMenu.setVisible(true);
-				
-		/*mainApp.primaryStage.setOnCloseRequest(evt -> {
+		//buttonMenu.setVisible(true);
+		
+		mainApp.primaryStage.setOnCloseRequest(evt -> {
     		evt.consume();
     		});
-		*/
+		
 		Test.assessMode();	
 		
 		//keep mouse in the pop up screen, maybe robots?
-		
-	}
+	}*/
 	
+	private void assessMode() throws IOException {
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		JPasswordField passwordField = new JPasswordField();
+		JButton button = new JButton("Submit");
+		JLabel label = new JLabel("");
+		JLabel label2 = new JLabel("Enter assessor password");
+		JLabel label3 = new JLabel("");
+		frame.setAlwaysOnTop(true);
+		
+		button.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				String get = "r";
+				@SuppressWarnings("deprecation")
+				String test = passwordField.getText();
+
+				if (get.equals(test)) {
+					label.setText("Confirmed");
+					label3.setText("");	
+					Timer timer = new Timer(1000, new ActionListener() {
+						@Override
+						public void actionPerformed(java.awt.event.ActionEvent arg0) {
+							frame.dispose();
+	                        buttonMenu.setVisible(true);
+							
+						}
+	                });
+	                timer.start();
+				} else {
+					label3.setText("Invalid password");
+					label.setText("");
+					passwordField.setText("");
+				}
+				
+			}
+		});
+
+		panel.add(passwordField);
+		passwordField.setBounds(5, 30, 70, 20);
+		panel.add(button);
+		button.setBounds(80, 30, 75, 20);
+		panel.add(label);
+		label.setBounds(50, 55, 100, 20);
+		panel.add(label2);
+		label2.setBounds(7, 5, 500, 20);
+		panel.add(label3);
+		label3.setBounds(30, 55, 100, 20);
+		frame.setSize(275, 200);
+		frame.setLocationRelativeTo(null);
+		frame.setUndecorated(true);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.getContentPane().add(panel);
+		frame.setVisible(true);
+	}
 	
 	
 	
@@ -108,8 +165,7 @@ public class LoadViewController
 			
 			assessment.setVisible(false);
 			
-			result.setText("You scored " + score + " out of " + max + " points. \n"
-					+ "Please wait for the assessor to collect your score.");
+			result.setText("You scored " + score + " out of " + max + " points.");
 			buttonMenu.setVisible(false);
 			buttonRestart.setVisible(false);
 			buttonExit.setVisible(false);

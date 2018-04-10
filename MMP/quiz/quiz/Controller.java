@@ -64,6 +64,11 @@ public class Controller extends Application {
 		} catch (IOException e) {
 			throw new IOException("Error with loading the Main Menu");
 		}
+		
+		
+		primaryStage.setOnCloseRequest(evt -> {
+    		primaryStage.close();
+    		});
 	}
 	
 	// Loads the load thing menu
