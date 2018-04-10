@@ -62,20 +62,12 @@ public class LoadViewController
 		System.out.println("assessment: " + assessMode);
 		}
 	
-	/*private void assessMode() throws IOException {
-		System.out.println("Lock it and then activate menu button");
-		//buttonMenu.setVisible(true);
+	private void assessMode() throws IOException {
 		
 		mainApp.primaryStage.setOnCloseRequest(evt -> {
     		evt.consume();
     		});
 		
-		Test.assessMode();	
-		
-		//keep mouse in the pop up screen, maybe robots?
-	}*/
-	
-	private void assessMode() throws IOException {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
@@ -90,12 +82,12 @@ public class LoadViewController
 
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent e) {
-				String get = "r";
+				String get = "password";
 				@SuppressWarnings("deprecation")
 				String test = passwordField.getText();
 
 				if (get.equals(test)) {
-					label.setText("Confirmed");
+					label.setText("Correct Password");
 					label3.setText("");	
 					Timer timer = new Timer(1000, new ActionListener() {
 						@Override
@@ -125,7 +117,7 @@ public class LoadViewController
 		label2.setBounds(7, 5, 500, 20);
 		panel.add(label3);
 		label3.setBounds(30, 55, 100, 20);
-		frame.setSize(275, 200);
+		frame.setSize(162, 75);
 		frame.setLocationRelativeTo(null);
 		frame.setUndecorated(true);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -165,7 +157,8 @@ public class LoadViewController
 			
 			assessment.setVisible(false);
 			
-			result.setText("You scored " + score + " out of " + max + " points.");
+			result.setText("You scored " + score + " out of " + max + " points. \n"
+ 					+ "Please wait for the assessor to collect your score.");
 			buttonMenu.setVisible(false);
 			buttonRestart.setVisible(false);
 			buttonExit.setVisible(false);
