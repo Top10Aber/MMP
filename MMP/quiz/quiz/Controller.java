@@ -168,6 +168,9 @@ public class Controller extends Application {
 		defaultNumOfAttempts = defaultNumOfAttempts - 1;
 		
 		}*/
+	
+	
+	
 
 	
 	

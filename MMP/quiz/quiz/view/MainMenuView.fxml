@@ -124,8 +124,11 @@
             </ButtonBar>
             <CheckBox fx:id="assessment" mnemonicParsing="false" onAction="#checkEvent" text="Assessment mode" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="225.0" top="75.0" />
+                  <Insets left="210.0" top="75.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </CheckBox>
          </children>
       </GridPane>

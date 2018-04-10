@@ -43,31 +43,33 @@ public class LoadViewController
 	@FXML private void buttonAbout() throws Exception	    { mainApp.showAboutScreen();   } 
 	@FXML private void buttonExit() throws Exception	    { quit();                      } 
 	
+	static boolean assessMode;
 	
-	boolean assessMode = false;
-	
-	public void checkEvent(ActionEvent event) {
+	/*public void checkEvent(ActionEvent event) {
 		if(assessment.isSelected()) {
-			assessMode=true;
-			System.out.println("assess on");
+			assessMode = true;
+			System.out.println("assessment: " + assessMode);
+			return;
 		} else {
 		assessMode = false;
-		System.out.println("assess off");
+		System.out.println("assessment: " + assessMode);
 		}
-	}
+	} */
 	
+	public void checkEvent(ActionEvent event) {
+		assessMode = assessment.isSelected();
+		System.out.println("assessment: " + assessMode);
+		}
 	
 	private void assessMode() {
-		
-		//lock it and shit
-		
-		System.out.println("test");
+		System.out.println("Hello");
 	}
-	
-	
 	
 	//loads results and attempts
 	public void showResult(int score, int max, int attempt){
+		
+		
+		
 		buttonLoad.setVisible(false);
 		buttonAbout.setVisible(false);
 		buttonMenu.setVisible(true);
@@ -75,6 +77,7 @@ public class LoadViewController
 		titleText.setText("Result from Quiz:"); //text
 		assessment.setVisible(false);
 		
+		System.out.println(assessMode);
 		
 		if(assessMode == false) {
 			//All correct:
@@ -94,8 +97,6 @@ public class LoadViewController
 			}
 			
 		} else {
-			
-			//disable closing 
 			
 			assessment.setVisible(false);
 			
