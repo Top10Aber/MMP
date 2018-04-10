@@ -60,17 +60,12 @@ public class LoadViewController
 	
 	//loads results and attempts
 	public void showResult(int score, int max, int attempt){
-		
-		
-		
 		buttonLoad.setVisible(false);
 		buttonAbout.setVisible(false);
 		buttonMenu.setVisible(true);
 		buttonRestart.setVisible(true);
 		titleText.setText("Result from Quiz:"); //text
 		assessment.setVisible(false);
-		
-		System.out.println(assessMode);
 		
 		if(assessMode == false) {
 			//All correct:
