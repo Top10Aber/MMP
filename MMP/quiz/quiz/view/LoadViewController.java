@@ -44,25 +44,18 @@ public class LoadViewController
 	@FXML private void buttonExit() throws Exception	    { quit();                      } 
 	
 	static boolean assessMode;
-	
-	/*public void checkEvent(ActionEvent event) {
-		if(assessment.isSelected()) {
-			assessMode = true;
-			System.out.println("assessment: " + assessMode);
-			return;
-		} else {
-		assessMode = false;
-		System.out.println("assessment: " + assessMode);
-		}
-	} */
-	
+
 	public void checkEvent(ActionEvent event) {
 		assessMode = assessment.isSelected();
 		System.out.println("assessment: " + assessMode);
 		}
 	
 	private void assessMode() {
-		System.out.println("Hello");
+		
+		
+		System.out.println("Lock it and then activate menu button");
+	
+	
 	}
 	
 	//loads results and attempts
