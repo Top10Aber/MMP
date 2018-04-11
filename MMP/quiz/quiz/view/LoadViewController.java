@@ -57,6 +57,8 @@ public class LoadViewController
 		assessMode = assessment.isSelected();
 		System.out.println("assessment: " + assessMode);
 		}
+	//Credit to "Ben Cooper, MEng (Hons) MBCS" for showing me how to simplify this method
+	
 	
 	private void assessMode() throws IOException {
 		
