@@ -13,13 +13,12 @@ import javafx.stage.FileChooser.ExtensionFilter;
 public final class FileImport
 {
 	
-	//RESEARCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	//Use a different one kind of file loader?
 	//opens file search dialog
 	public static void importQuiz(QuizModel quiz) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Import Quiz"); //name of dialog
-		fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + "/Desktop")); //default starting area. wanna change this 
+		fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + "/Desktop")); //default starting area.  
 		//http://book2s.com/java/api/javafx/stage/filechooser/setinitialdirectory-1.html    <--- REFERENCE
 		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.txt")); //only looks for txt files
 		File selectedFile = fileChooser.showOpenDialog(null);
@@ -32,7 +31,6 @@ public final class FileImport
 		}
 	}
 
-	//idk lel
 	private static void readFileToQuiz(File f, QuizModel quiz) throws IOException{
 		if (f.exists()) {
 			FileInputStream file = new FileInputStream(f);

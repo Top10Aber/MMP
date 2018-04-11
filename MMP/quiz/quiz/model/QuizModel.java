@@ -6,8 +6,7 @@ import java.util.List;
 
 public class QuizModel {
 	public List<AQuiz> quiz;	// Quiz as loaded from file.
-	private List<AQuiz> game;	//clone of the quiz but the correctly answers fellas are removed to let the user revisit the other ones 
-								//could be an adaption
+	private List<AQuiz> game;	//clone of the quiz but the correctly answered fellas are removed to let the user revisit the other ones 
 
 	//makes quiz from imported file
 	public QuizModel() throws Exception{
@@ -17,12 +16,11 @@ public class QuizModel {
 	}
 	
 	//the clone of the quiz so can be redone
-	@SuppressWarnings("unchecked") //what dis? Research!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	@SuppressWarnings("unchecked") //might cause issues else where- but probably fine... 
 	public void startGame(){
 		game = (List<AQuiz>) ((LinkedList<AQuiz>) getQuiz()).clone();
 	}
 	
-	//loads quiz in... again?
 	public void addAQuiz(List<String> list){
 		getQuiz().add(new AQuiz(list));
 	}
@@ -46,6 +44,7 @@ public class QuizModel {
 
 	
 	//basically counts the number of questions so it can say "wow you got X out of a possible Y!"
+	//that could be a feature actually.. put it above the progress bar maybe?
 	public int getGameSize(){
 		return game.size();
 	}
@@ -61,7 +60,6 @@ public class QuizModel {
 	}
 	
 	//removes correct ones from clone so can be redone
-	// This will be part of back button
 	public void remove(int index) throws IOException{
 		if (index < game.size())
 			game.remove(index);

@@ -29,9 +29,6 @@ public class QuizViewController {
 	@FXML private Button bigger;
 	@FXML private Button reset;
 	
-	
-//	@FXML private Button buttonBack;
-	
 	int size = 0;
 	int qSize = 18;
 	
@@ -94,11 +91,6 @@ public class QuizViewController {
 	@FXML private void rbClicked() { buttonNext.setDisable(false); }
 	@FXML private void buttonNext() throws IOException { getNextQuestion(); }
 	@FXML private void buttonSkip() throws IOException { skipQuestion(); }
-	
-	
-//	@FXML private void buttonBack() throws IOException { getPrevQuestion(); }
-	
-	
 
 	private void getNextQuestion() throws IOException {
 		String picked = ((Labeled) optionGroup.getSelectedToggle()).getText();
@@ -112,38 +104,11 @@ public class QuizViewController {
 
 	}
 	
-	
-	
-/*	private void getPrevQuestion() throws IOException {
-		mainApp.prevQuestion();
-		System.out.println(Controller.questionNum);
-
-	}*/
-	
-	
-
 	//makes features visible
 	public void showQuiz(String question, String[] allAnswers){
 		this.question.setText(question + "?"); //Make question mark conditional if possible
 		this.question.setVisible(true);
 		this.buttonNext.setDisable(true);
-		
-		
-		
-		
-		//Once I find a fix, remove the below line
-//		this.buttonBack.setVisible(false);
-		
-		//defaultNOA for not going back on correct ones
-		// QUESTION NUM WORKS BUT IT REMOVES THE QUESTION!
-		
-		//Ok so it currently works but doesn't remove the question which is annoying...
-		
-/*		if(Controller.questionNum < 1){
-			buttonBack.setDisable(true);
-		} else { buttonBack.setDisable(false);}
-*/		
-		
 		
 		this.buttonSkip.setDisable(false);
 		for (int i = 0; i < 6; i++){

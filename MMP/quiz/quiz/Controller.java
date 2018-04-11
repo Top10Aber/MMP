@@ -26,10 +26,10 @@ public class Controller extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Educational Quiz System"); //Title of the program
-		primaryStage.getIcons().add(new Image("icon_1.png")); // Change to something relevant
+		primaryStage.getIcons().add(new Image("icon_1.png")); // still not happy with it but whatever. 
 		primaryStage.setResizable(false);  //Locks size 
 		//REFERENCE: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
-		// Check if I need to reference in code
+		// Check if I need to reference in code and HOW!!!!
 		
 		loadBaseLayout();
 		showLoadScreen();
@@ -71,7 +71,7 @@ public class Controller extends Application {
     		});
 	}
 	
-	// Loads the load thing menu
+	// Loads the about menu
 	public void showAboutScreen() throws IOException {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -122,8 +122,6 @@ public class Controller extends Application {
 		}
 	}
 	
-
-	//comment this
 	private void showQuiz(int index) throws IOException{
 		view.setProgress((double) (1 + defaultNumOfAttempts + quizDesign.getScore()) / (double) quizDesign.getTotalScore());
 		if (index < quizDesign.getGameSize())
@@ -134,10 +132,8 @@ public class Controller extends Application {
 
 	public void loadNextQuestion(String pick) throws IOException{
 		
-		//Find a way to go back but also remove correct ones
-		
 		if (pick.equals(quizDesign.getCorrect(defaultNumOfAttempts))){
-			quizDesign.remove(defaultNumOfAttempts); //This is the problem line
+			quizDesign.remove(defaultNumOfAttempts); 
 			questionNum ++;
 		} else { 
 		
@@ -163,21 +159,6 @@ public class Controller extends Application {
 			showResult();
 		}
 	}
-	
-	
-	
-	
-	// Currently does nothing until I either fix removal or remove this feature :( 
-/*	public void prevQuestion() throws IOException {
-		questionNum --;
-		defaultNumOfAttempts = defaultNumOfAttempts - 1;
-		
-		}*/
-	
-	
-	
-
-	
 	
 	
 	//Show results and attempts

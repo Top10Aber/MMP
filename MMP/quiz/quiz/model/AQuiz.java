@@ -18,7 +18,7 @@ public class AQuiz {
 			allAnswers = new String[MAX_ANSWER_OPTIONS]; // If there's more than 6, scrap the rest lol
 		else
 			allAnswers = new String[list.size()-1];
-		//Randomises order of answers to select. Makes it easy for maker but not obvious the answer is always the top one 
+		//Randomises order of answers to select. Makes it easy for maker but not obvious the answer is always the top one #smart
 		int correctIndex = (int) (Math.random() * allAnswers.length);
 		int listIndex = 2;
 		for (int i=0; i < allAnswers.length; i++){
