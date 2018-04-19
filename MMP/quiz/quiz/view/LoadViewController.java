@@ -51,7 +51,7 @@ public class LoadViewController
 	@FXML private void buttonAbout() throws Exception	    { mainApp.showAboutScreen();   } 
 	@FXML private void buttonExit() throws Exception	    { quit();                      } 
 	
-	static boolean assessMode;
+	public static boolean assessMode;
 
 	public void checkEvent(ActionEvent event) {
 		assessMode = assessment.isSelected();
@@ -92,6 +92,7 @@ public class LoadViewController
 						public void actionPerformed(java.awt.event.ActionEvent arg0) {
 							frame.dispose();
 	                        buttonMenu.setVisible(true);
+	                        assessMode = false;
 							
 						}
 	                });

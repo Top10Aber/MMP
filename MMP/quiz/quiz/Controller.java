@@ -30,7 +30,6 @@ public class Controller extends Application {
 		primaryStage.setResizable(false);  //Locks size 
 		//REFERENCE: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
 		// Check if I need to reference in code and HOW!!!!
-		
 		loadBaseLayout();
 		showLoadScreen();
 	}
