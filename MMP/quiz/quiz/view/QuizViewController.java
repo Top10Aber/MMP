@@ -106,7 +106,14 @@ public class QuizViewController {
 	
 	//makes features visible
 	public void showQuiz(String question, String[] allAnswers){
-		this.question.setText(question + "?"); //Make question mark conditional if possible
+		this.question.setText(question + "?"); 
+		
+		if(question.contains("?")){
+			this.question.setText(question);
+		} else {
+			this.question.setText(question + "?");
+		}
+		
 		this.question.setVisible(true);
 		this.buttonNext.setDisable(true);
 		

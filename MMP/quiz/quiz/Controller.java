@@ -169,7 +169,7 @@ public class Controller extends Application {
 	public void Exit() throws IOException {
 		System.exit(0);
 	 }
-	
+
 	//DO NOT DELETE THIS AGAIN I ALMOST CRIED AFTER LOSING EVERYTHING
 	public static void main(String[] args) {
 		launch(args);
