@@ -10,11 +10,8 @@ import java.util.Scanner;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
-public final class FileImport
-{
-	
-	//Use a different one kind of file loader?
-	//opens file search dialog
+public final class FileImport {
+		//opens file search dialog
 	public static void importQuiz(QuizModel quiz) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Import Quiz"); //name of dialog
