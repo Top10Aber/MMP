@@ -58,7 +58,8 @@ public class Controller extends Application {
 			baseLayout.setCenter(loadView);
 			LoadViewController viewController = loader.getController();
 			viewController.setMainApp(this);
-			load = viewController;				
+			load = viewController;	
+			System.out.println("assessment: " + LoadViewController.assessMode);
 
 		} catch (IOException e) {
 			throw new IOException("Error with loading the Main Menu");

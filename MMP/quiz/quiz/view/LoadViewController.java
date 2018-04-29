@@ -92,8 +92,6 @@ public class LoadViewController
 						public void actionPerformed(java.awt.event.ActionEvent arg0) {
 							frame.dispose();
 	                        buttonMenu.setVisible(true);
-	                        assessMode = false;
-							
 						}
 	                });
 	                timer.start();
@@ -103,6 +101,9 @@ public class LoadViewController
 					passwordField.setText("");
 				}
 				
+				assessMode = false;
+                System.out.println("assessment: " + assessMode);
+				
 			}
 		});
 
@@ -111,7 +112,7 @@ public class LoadViewController
 		panel.add(button);
 		button.setBounds(80, 30, 75, 20);
 		panel.add(label);
-		label.setBounds(50, 55, 100, 20);
+		label.setBounds(30, 55, 120, 20);
 		panel.add(label2);
 		label2.setBounds(7, 5, 500, 20);
 		panel.add(label3);
