@@ -73,6 +73,9 @@
                </opaqueInsets>
             </Button>
          </buttons>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
       </ButtonBar>
    </children>
 </AnchorPane>

@@ -76,12 +76,12 @@
                </padding>
             </ButtonBar>
             <ProgressBar fx:id="progressBar" accessibleHelp="Progress" maxHeight="15.0" minHeight="5.0" mouseTransparent="true" pickOnBounds="false" prefHeight="15.0" prefWidth="540.0" progress="0.0" GridPane.columnSpan="3" GridPane.rowIndex="3" />
-            <Label fx:id="question" text="Label" wrapText="true">
+            <Label fx:id="question" prefHeight="64.0" prefWidth="540.0" text="Label" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
                <GridPane.margin>
-                  <Insets top="50.0" />
+                  <Insets top="25.0" />
                </GridPane.margin>
             </Label>
          </children>
