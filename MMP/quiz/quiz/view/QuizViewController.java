@@ -12,7 +12,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Font;
 
 public class QuizViewController {
-	private Controller mainApp;		// Reference to the main application
+	private Controller mainApp;		// Reference to the Controller application
 	@FXML private Label question; // The question
 	@FXML private RadioButton optionA;  // The options
 	@FXML private RadioButton optionB;
@@ -83,7 +83,7 @@ public class QuizViewController {
 		optionF.setToggleGroup(optionGroup);
 		optionG.setToggleGroup(optionGroup);
 	}
-	//set up program in the main screen (easier to make using fxml)
+	//set up program in the Controller screen (easier to make using fxml)
 	public void setMainApp(Controller mainApp) {
 		this.mainApp = mainApp;	
 	}

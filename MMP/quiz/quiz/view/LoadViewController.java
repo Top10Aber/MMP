@@ -16,7 +16,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
 public class LoadViewController {
-	private Controller   mainApp;		// call back to the main application to load it all in
+	private Controller   mainApp;		// call back to the Controller application to load it all in
 	@FXML private Label  headline;
 	@FXML private Label  titleText;	// load fxml things
 	@FXML private Label  result;
@@ -34,7 +34,7 @@ public class LoadViewController {
 		result = new Label();
 	}
 	
-	// call back to the main application to load it all in
+	// call back to the Controller application to load it all in
 	public void setMainApp(Controller mainApp) {
 		this.mainApp = mainApp;	
 	}
@@ -61,7 +61,7 @@ public class LoadViewController {
 	
 	private void assessMode() throws IOException {
 		
-		mainApp.primaryStage.setOnCloseRequest(evt -> {
+		mainApp.layout.setOnCloseRequest(evt -> {
     		evt.consume();
     		});
 		
@@ -153,17 +153,13 @@ public class LoadViewController {
 			}
 			
 		} else {
-			
 			assessment.setVisible(false);
-			
 			result.setText("You scored " + score + " out of " + max + " points. \n"
  					+ "Please wait for the assessor to collect your score.");
 			buttonMenu.setVisible(false);
 			buttonRestart.setVisible(false);
 			buttonExit.setVisible(false);
-			
 			assessMode();
-	
 		}
 	}	
 }

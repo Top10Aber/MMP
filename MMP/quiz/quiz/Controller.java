@@ -14,21 +14,29 @@ import quiz.view.QuizViewController;
 
 public class Controller extends Application {
 	
-	public Stage primaryStage;
+	public Stage layout;
 	private BorderPane baseLayout;
-	private QuizModel quizDesign;
+	private QuizModel quizModel;
 	private QuizViewController view;
 	private LoadViewController load;
 	public static int defaultNumOfAttempts;
 	static int numOfAttempts;
 	public static int questionNum;
 
-	public void start(Stage primaryStage) throws Exception {
-		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Educational Quiz System"); //Title of the program
-		primaryStage.getIcons().add(new Image("icon_1.png")); // still not happy with it but whatever.
-		primaryStage.setResizable(false);  //Locks size 
-		//REFERENCE: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
+	public void start(Stage layout) throws Exception {
+		this.layout = layout;
+		this.layout.setTitle("Educational Quiz System"); //Title of the program
+		layout.getIcons().add(new Image("icon_1.png")); // still not happy with it but whatever.
+		layout.setResizable(false);  //Locks size, Referenced below
+		
+		/*	
+	 	Reference
+		- Authors name: https://stackoverflow.com/users/373653/sjr
+		- Title: "How can I remove just the Maximize button from a JFrame?"
+		- Type: Tutorial code
+		- Source URL: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
+	    */
+		
 		// Check if I need to reference in code and HOW!!!!
 		loadBaseLayout();
 		showLoadScreen();
@@ -41,8 +49,8 @@ public class Controller extends Application {
 			loader.setLocation(Controller.class.getResource("view/BaseLayout.fxml"));
 			baseLayout = (BorderPane) loader.load();
 			Scene scene = new Scene(baseLayout);
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			layout.setScene(scene);
+			layout.show();
 
 		} catch (IOException e) {
 			throw new IOException("Error with loading the Controller layout.");
@@ -66,8 +74,8 @@ public class Controller extends Application {
 		}
 		
 		
-		primaryStage.setOnCloseRequest(evt -> {
-    		primaryStage.close();
+		layout.setOnCloseRequest(evt -> {
+    		layout.close();
     		});
 	}
 	
@@ -90,13 +98,13 @@ public class Controller extends Application {
 	//Restart quiz button
 	public void restartQuiz() throws IOException {
 		numOfAttempts = 0;
-		quizDesign.startGame();
+		quizModel.startGame();
 		showQuizView();
 	}
 	
 	public void loadQuiz() throws Exception{
 		numOfAttempts = 0;
-		this.quizDesign = new QuizModel();
+		this.quizModel = new QuizModel();
 		showQuizView();
 	}
 
@@ -105,7 +113,7 @@ public class Controller extends Application {
 		defaultNumOfAttempts = 0;
 		questionNum = 0;
 		numOfAttempts = numOfAttempts + 1;
-		if (quizDesign.getGameSize() > 0) {
+		if (quizModel.getGameSize() > 0) {
 			try {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(Controller.class.getResource("view/QuizView.fxml"));
@@ -123,17 +131,17 @@ public class Controller extends Application {
 	}
 	
 	private void showQuiz(int index) throws IOException{
-		view.setProgress((double) (1 + defaultNumOfAttempts + quizDesign.getScore()) / (double) quizDesign.getTotalScore());
-		if (index < quizDesign.getGameSize())
-			view.showQuiz(quizDesign.getQuestion(index), quizDesign.getAllAnswers(index));
+		view.setProgress((double) (1 + defaultNumOfAttempts + quizModel.getScore()) / (double) quizModel.getTotalScore());
+		if (index < quizModel.getGameSize())
+			view.showQuiz(quizModel.getQuestion(index), quizModel.getAllAnswers(index));
 		else
 			throw new IOException("Error showing quiz");
 	}
 
 	public void loadNextQuestion(String pick) throws IOException{
 		
-		if (pick.equals(quizDesign.getCorrect(defaultNumOfAttempts))){
-			quizDesign.remove(defaultNumOfAttempts); 
+		if (pick.equals(quizModel.getCorrect(defaultNumOfAttempts))){
+			quizModel.remove(defaultNumOfAttempts); 
 			questionNum ++;
 		} else { 
 		
@@ -142,7 +150,7 @@ public class Controller extends Application {
 			
 		}
 
-		if (defaultNumOfAttempts < quizDesign.getGameSize()){
+		if (defaultNumOfAttempts < quizModel.getGameSize()){
 			showQuiz((defaultNumOfAttempts));
 		} else {
 			showResult();
@@ -153,7 +161,7 @@ public class Controller extends Application {
 
 		defaultNumOfAttempts = defaultNumOfAttempts + 1;
 		questionNum ++;
-		if (defaultNumOfAttempts < quizDesign.getGameSize()){
+		if (defaultNumOfAttempts < quizModel.getGameSize()){
 			showQuiz((defaultNumOfAttempts));
 		} else {
 			showResult();
@@ -164,7 +172,7 @@ public class Controller extends Application {
 	//Show results and attempts
 	private void showResult() throws IOException{
 		showLoadScreen(); 
-		load.showResult(quizDesign.getScore(), quizDesign.getTotalScore(), numOfAttempts);
+		load.showResult(quizModel.getScore(), quizModel.getTotalScore(), numOfAttempts);
 	}
 	
 	public void Exit() throws IOException {

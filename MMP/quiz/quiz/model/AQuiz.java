@@ -9,7 +9,6 @@ public class AQuiz {
 	private String correctAnswer;
 	private String[] allAnswers;
 
-	
 	public AQuiz(List<String> list){
 		questions = list.get(0); //question is top line of txt. 0 because obviously arrays/lists start at 0
 		correctAnswer = list.get(1); //correct answer has to be the top answer

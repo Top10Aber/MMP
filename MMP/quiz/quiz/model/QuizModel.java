@@ -25,7 +25,7 @@ public class QuizModel {
 		getQuiz().add(new AQuiz(list));
 	}
 	
-	// Getters for the controller:
+	// Getters for the Controller:
 
 	//loads question
 	public String getQuestion(int index){
