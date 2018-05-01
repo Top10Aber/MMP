@@ -139,7 +139,7 @@ public class LoadViewController {
 			//All correct:
 		if (score == max) { 
 				result.setText("Congratulations, you scored the full " + score + " points!\n"
-						+ "(It took " + attempt + " attempt" + (attempt > 1 ? "s)" :")")); //REFERENCE THIS !!!!!!!!!!!!!!!!!
+						+ "(It took " + attempt + " attempt" + (attempt > 1 ? "s)" :")")); 
 				buttonResume.setVisible(false);//full marks dont get to revisit obviously
 			//None correct:
 			} else if (score == 0) {
@@ -148,7 +148,7 @@ public class LoadViewController {
 			//Scored some, but not all/none
 			} else {
 				result.setText("You scored " + score + " out of " + max + " points. \n"  
-						+ "Revisit the incorrect answers or return to the menu.");
+						+ "Revisit the incorrect answers \n or return to the menu.");
 				buttonResume.setVisible(true);
 			}
 			
