@@ -15,8 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
-public class LoadViewController
-{
+public class LoadViewController {
 	private Controller   mainApp;		// call back to the main application to load it all in
 	@FXML private Label  headline;
 	@FXML private Label  titleText;	// load fxml things

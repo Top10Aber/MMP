@@ -45,7 +45,7 @@ public class Controller extends Application {
 			primaryStage.show();
 
 		} catch (IOException e) {
-			throw new IOException("Error with loading the main layout.");
+			throw new IOException("Error with loading the Controller layout.");
 		}
 	}
 
@@ -62,7 +62,7 @@ public class Controller extends Application {
 			System.out.println("assessment: " + LoadViewController.assessMode);
 
 		} catch (IOException e) {
-			throw new IOException("Error with loading the Main Menu");
+			throw new IOException("Error with loading the Controller Menu");
 		}
 		
 		
@@ -171,8 +171,7 @@ public class Controller extends Application {
 		System.exit(0);
 	 }
 
-	//DO NOT DELETE THIS AGAIN I ALMOST CRIED AFTER LOSING EVERYTHING
-	public static void main(String[] args) {
+	public static void Main(String[] args) {
 		launch(args);
 	}
 
