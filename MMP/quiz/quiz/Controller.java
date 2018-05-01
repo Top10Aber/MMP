@@ -140,7 +140,7 @@ public class Controller extends Application {
 	}
 
 	public void loadNextQuestion(String pick) throws IOException{
-		
+				
 		if (pick.equals(quizModel.getCorrect(defaultNumOfAttempts))){
 			quizModel.remove(defaultNumOfAttempts); 
 			questionNum ++;
