@@ -13,6 +13,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 public final class FileImport {
 		//opens file search dialog
 	
+	
 	public static void importQuiz(QuizModel quiz) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Import Quiz"); //name of dialog
