@@ -25,7 +25,7 @@ public class QuizModel {
 		getQuiz().add(new AQuiz(list));
 	}
 	
-	// Getters for the controller:
+	// Getters for the Controller:
 
 	//loads question
 	public String getQuestion(int index){
@@ -43,7 +43,7 @@ public class QuizModel {
 	}
 
 	
-	//basically counts the number of questions so it can say "wow you got X out of a possible Y!"
+	//counts the number of questions so it can update progress bar or say "wow you got X out of a possible Y!"
 	//that could be a feature actually.. put it above the progress bar maybe?
 	public int getGameSize(){
 		return game.size();

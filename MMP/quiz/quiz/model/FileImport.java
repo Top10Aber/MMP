@@ -12,6 +12,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 
 public final class FileImport {
 		//opens file search dialog
+	
 	public static void importQuiz(QuizModel quiz) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Import Quiz"); //name of dialog
@@ -19,7 +20,7 @@ public final class FileImport {
 		// Below code is used from Reference [1] from research
  		fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + "/Desktop")); //default starting area.  
  		// End of Reference [1]
- 		
+
  		/*
  		Reference [1]
  			- Authors name: "book2s.com"
@@ -30,7 +31,6 @@ public final class FileImport {
 		
 		// Reference [1] lead to finding this built in function:
  		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.txt")); //only looks for txt files
-		
 		File selectedFile = fileChooser.showOpenDialog(null);
 		if (selectedFile != null) {
 			try {
@@ -39,12 +39,9 @@ public final class FileImport {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	
-	
-	
-	
+		}
+		
+		
 	private static void readFileToQuiz(File f, QuizModel quiz) throws IOException{
 		if (f.exists()) {
 			FileInputStream file = new FileInputStream(f);
