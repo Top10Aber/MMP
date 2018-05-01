@@ -15,9 +15,22 @@ public final class FileImport {
 	public static void importQuiz(QuizModel quiz) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Import Quiz"); //name of dialog
-		fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + "/Desktop")); //default starting area.  
-		//http://book2s.com/java/api/javafx/stage/filechooser/setinitialdirectory-1.html    <--- REFERENCE
-		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.txt")); //only looks for txt files
+		
+		// Below code is used from Reference [1] from research
+ 		fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + "/Desktop")); //default starting area.  
+ 		// End of Reference [1]
+ 		
+ 		/*
+ 		Reference [1]
+ 			- Authors name: "book2s.com"
+ 			- Title: "javafx FileChooser File Chooser set Initial Directory"
+ 			- Type: Tutorial code
+ 			- Source URL: http://book2s.com/java/api/javafx/stage/filechooser/setinitialdirectory-1.html
+ 		*/
+		
+		// Reference [1] lead to finding this built in function:
+ 		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.txt")); //only looks for txt files
+		
 		File selectedFile = fileChooser.showOpenDialog(null);
 		if (selectedFile != null) {
 			try {
@@ -28,6 +41,10 @@ public final class FileImport {
 		}
 	}
 
+	
+	
+	
+	
 	private static void readFileToQuiz(File f, QuizModel quiz) throws IOException{
 		if (f.exists()) {
 			FileInputStream file = new FileInputStream(f);

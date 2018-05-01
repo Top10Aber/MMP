@@ -28,8 +28,15 @@ public class Controller extends Application {
 		this.primaryStage.setTitle("Educational Quiz System"); //Title of the program
 		primaryStage.getIcons().add(new Image("icon_1.png")); // still not happy with it but whatever.
 		primaryStage.setResizable(false);  //Locks size 
-		//REFERENCE: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
-		// Check if I need to reference in code and HOW!!!!
+		
+		/*
+ 		Reference
+ 			- Authors name: https://stackoverflow.com/users/373653/sjr
+ 			- Title: "How can I remove just the Maximize button from a JFrame?"
+ 			- Type: Tutorial code
+ 			- Source URL: https://stackoverflow.com/questions/5625436/how-can-i-remove-just-the-maximize-button-from-a-jframe
+ 		*/
+		
 		loadBaseLayout();
 		showLoadScreen();
 	}
@@ -171,7 +178,6 @@ public class Controller extends Application {
 		System.exit(0);
 	 }
 
-	//DO NOT DELETE THIS AGAIN I ALMOST CRIED AFTER LOSING EVERYTHING
 	public static void main(String[] args) {
 		launch(args);
 	}
