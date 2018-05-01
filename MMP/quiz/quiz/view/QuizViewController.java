@@ -106,6 +106,7 @@ public class QuizViewController {
 	
 	//makes features visible
 	public void showQuiz(String question, String[] allAnswers){
+		
 		this.question.setText(question); 
 		if(question.contains("?")){
 			this.question.setText(question);
@@ -113,8 +114,8 @@ public class QuizViewController {
 			this.question.setText(question + "?");
 		}
 		
-		this.question.setVisible(true);
 		this.buttonNext.setDisable(true);
+		this.question.setVisible(true);
 		this.buttonSkip.setDisable(false);
 		for (int i = 0; i < 6; i++){
 			if (i >= allAnswers.length) {
