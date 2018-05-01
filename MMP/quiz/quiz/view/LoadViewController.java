@@ -16,7 +16,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
 public class LoadViewController {
-	private Controller   mainApp;		// call back to the Controller application to load it all in
+	private Controller   mainApp;	// call back to the Controller method to load it things in
 	@FXML private Label  headline;
 	@FXML private Label  titleText;	// load fxml things
 	@FXML private Label  result;
@@ -52,12 +52,11 @@ public class LoadViewController {
 	
 	public static boolean assessMode;
 
+	//Credit to "Ben Cooper, MEng (Hons) MBCS" for showing me how to simplify this method
 	public void checkEvent(ActionEvent event) {
 		assessMode = assessment.isSelected();
 		System.out.println("assessment: " + assessMode);
 		}
-	//Credit to "Ben Cooper, MEng (Hons) MBCS" for showing me how to simplify this method
-	
 	
 	private void assessMode() throws IOException {
 		
