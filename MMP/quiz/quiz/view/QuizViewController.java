@@ -1,6 +1,5 @@
 package quiz.view;
 
-import quiz.Controller;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,17 +9,18 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Font;
+import quiz.Controller;
 
 public class QuizViewController {
-	private Controller mainApp;		// Reference to the Controller application
-	@FXML private Label question; // The question
+	private Controller mainApp;		    // Reference to the Controller application
+	@FXML private Label question;       // The question
 	@FXML private RadioButton optionA;  // The options
 	@FXML private RadioButton optionB;
 	@FXML private RadioButton optionC;
 	@FXML private RadioButton optionD;
 	@FXML private RadioButton optionE;
 	@FXML private RadioButton optionF;
-	@FXML private RadioButton optionG;
+	@FXML private RadioButton optionG;  // Literally only exists to fix a bug lol
 	@FXML private ToggleGroup optionGroup;
 	private RadioButton[] radioButtons;
 	@FXML private ProgressBar progressBar; 
@@ -32,17 +32,18 @@ public class QuizViewController {
 	int size = 0;
 	int qSize = 18;
 	
-	@FXML private void buttonBig() throws Exception {size = 25;			
-													 question.setFont(new Font(size));
-													 optionG.setFont(new Font(size));
-													 optionA.setFont(new Font(size));
-													 optionB.setFont(new Font(size));
-													 optionC.setFont(new Font(size));
-													 optionD.setFont(new Font(size));
-													 optionE.setFont(new Font(size));
-													 optionF.setFont(new Font(size));
-													 this.bigger.setDisable(true);
-													 this.reset.setDisable(false);
+	@FXML private void buttonBig() throws Exception {
+		size = 25;			
+		question.setFont(new Font(size));
+		optionG.setFont(new Font(size));
+		optionA.setFont(new Font(size));
+		optionB.setFont(new Font(size));
+		optionC.setFont(new Font(size));
+		optionD.setFont(new Font(size));
+		optionE.setFont(new Font(size));
+		optionF.setFont(new Font(size));
+		this.bigger.setDisable(true);
+		this.reset.setDisable(false);
 	}
 
 	@FXML private void buttonReset() throws Exception {size = 14; 	
@@ -70,8 +71,8 @@ public class QuizViewController {
 		radioButtons = new RadioButton[7];
 		radioButtons[0] = optionA; 
 		radioButtons[1] = optionB; 
-		radioButtons[2] = optionC;	// Allocating radio buttons to the options
-		radioButtons[3] = optionD; 
+		radioButtons[2] = optionC;	
+		radioButtons[3] = optionD; // Allocating radio buttons to the options
 		radioButtons[4] = optionE; 
 		radioButtons[5] = optionF;
 		radioButtons[6] = optionG;
@@ -94,7 +95,7 @@ public class QuizViewController {
 
 	private void getNextQuestion() throws IOException {
 		String picked = ((Labeled) optionGroup.getSelectedToggle()).getText();
-		mainApp.loadNextQuestion(picked);
+		mainApp.nextQuestion(picked);
 		System.out.println(Controller.questionNum);
 	}
 	
@@ -105,7 +106,7 @@ public class QuizViewController {
 	}
 	
 	//makes features visible
-	public void showQuiz(String question, String[] allAnswers){
+	public void displayQuiz(String question, String[] allAnswers){
 		
 		this.question.setText(question); 
 		if(question.contains("?")){
