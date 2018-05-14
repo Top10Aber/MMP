@@ -13,8 +13,6 @@ import quiz.view.LoadViewController;
 import quiz.view.QuizViewController;
 
 public class Controller extends Application {
-
-	//TEST LINE TO REMOVE IN DEMO TO SHOW COMMITS
 	
 	public Stage layout;
 	private BorderPane baseLayout;
